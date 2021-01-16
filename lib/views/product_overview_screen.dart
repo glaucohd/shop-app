@@ -11,9 +11,14 @@ class ProductOverviewScreen extends StatelessWidget {
         title: Text('Minha Loja'),
       ),
       body: GridView.builder(
+        padding: const EdgeInsets.all(10),
+        itemCount: leadedProducts.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2),
-        itemBuilder: (context, index){
+            crossAxisCount: 2,
+            childAspectRatio: 3 / 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10),
+        itemBuilder: (context, index) {
           return Text(leadedProducts[index].title);
         },
       ),
