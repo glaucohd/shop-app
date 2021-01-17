@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop/models/product.dart';
 import '../data/dummy_data.dart';
+import '../widgets/product_item.dart';
 
 class ProductOverviewScreen extends StatelessWidget {
   final List<Product> leadedProducts = DUMMY_PRODUCTS;
@@ -19,7 +20,7 @@ class ProductOverviewScreen extends StatelessWidget {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
         itemBuilder: (context, index) {
-          return Text(leadedProducts[index].title);
+          return ProductItem(product: leadedProducts.elementAt(index));
         },
       ),
     );
